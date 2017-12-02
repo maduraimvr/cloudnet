@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/portal/cloudnet/constant/CommonConstant.java=UTF-8
+encoding//src/main/java/com/portal/cloudnet/dao/BaseDao.java=UTF-8
+encoding//src/main/java/com/portal/cloudnet/dao/Page.java=UTF-8
+encoding//src/main/java/com/portal/cloudnet/dao/UserDao.java=UTF-8
+encoding//src/main/java/com/portal/cloudnet/domain/BaseDomain.java=UTF-8
+encoding//src/main/java/com/portal/cloudnet/domain/MainPost.java=UTF-8
+encoding//src/main/java/com/portal/cloudnet/domain/User.java=UTF-8
+encoding//src/main/java/com/portal/cloudnet/service/UserService.java=UTF-8
+encoding//src/main/java/com/portal/cloudnet/web/BaseController.java=UTF-8
+encoding//src/main/java/com/portal/cloudnet/web/LoginController.java=UTF-8
