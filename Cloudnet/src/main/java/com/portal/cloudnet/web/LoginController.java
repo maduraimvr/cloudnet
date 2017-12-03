@@ -1,5 +1,7 @@
 package com.portal.cloudnet.web;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
@@ -27,29 +29,26 @@ public class LoginController extends BaseController {
      * @param request
      * @param user
      * @return
+     * @throws UnknownHostException 
      */
 	@RequestMapping("/doLogin")
-	public ModelAndView login(HttpServletRequest request, User user) {
+	public ModelAndView login(HttpServletRequest request, User user) throws UnknownHostException {
 		User dbUser = userService.getUserByUserName(user.getUserName());
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("forward:/login.jsp");
 		if (dbUser == null) {
-			mav.addObject("errorMsg", "ç”¨æˆ·å��ä¸�å­˜åœ¨");
+			mav.addObject("errorMsg", "database not found");
 		} else if (!dbUser.getPassword().equals(user.getPassword())) {
-			mav.addObject("errorMsg", "ç”¨æˆ·å¯†ç �ä¸�æ­£ç¡®");
+			mav.addObject("errorMsg", "password incorrect");
 		} else if (dbUser.getLocked() == User.USER_LOCK) {
-			mav.addObject("errorMsg", "ç”¨æˆ·å·²ç»�è¢«é”�å®šï¼Œä¸�èƒ½ç™»å½•ã€‚");
+			mav.addObject("errorMsg", "user locked");
 		} else {
-			dbUser.setLastIp(request.getRemoteAddr());
+			InetAddress localhost = InetAddress.getLocalHost();
+			String ipAddress=localhost.getHostAddress().trim();
+			dbUser.setLastIp(ipAddress);
 			dbUser.setLastVisit(new Date());
 			userService.loginSuccess(dbUser);
 			setSessionUser(request,dbUser);
-//			String toUrl = (String)request.getSession().getAttribute(CommonConstant.LOGIN_TO_URL);
-//			request.getSession().removeAttribute(CommonConstant.LOGIN_TO_URL);
-//			//å¦‚æžœå½“å‰�ä¼šè¯�ä¸­æ²¡æœ‰ä¿�å­˜ç™»å½•ä¹‹å‰�çš„è¯·æ±‚URLï¼Œåˆ™ç›´æŽ¥è·³è½¬åˆ°ä¸»é¡µ
-//			if(StringUtils.isEmpty(toUrl)){
-//				toUrl = "/index.html";
-//			}
 			mav.setViewName("forward:/index.jsp");
 		}
 		return mav;

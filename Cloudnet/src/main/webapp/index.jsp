@@ -24,7 +24,7 @@
 
   <title>Iris</title>
 </head>
-<body style="background: url(${path}/images/background.png);">
+<body style="background: url(${path}/images/login-background.png);">
   <%@ include file="header.jsp"%>
 
   <div class="card card-1">
@@ -51,11 +51,24 @@
 	</div>
   </div>
 
+<c:if test="${USER_CONTEXT.userType == 2}">
+<div class="container">
+<h3>click me</h3>
+<li><a href="<c:url value="/addItem.jsp"/>">add Item</a></li>
+<a class="btn btn-primary" href="<c:url value="/addItem.jsp"/>" role="button">Link</a>
+<button type="button" class="btn btn-success" href="<c:url value="/addItem.jsp"/>">Add</button>
+<%-- <button type="submit" class="btn btn-primary" href="<c:url value="/addItem.jsp"/>">Click</button> --%>
+</div>
 
 
 
- 
-	
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+  </c:if>
   <%@ include file="footer.jsp"%>
   
   <script src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>

@@ -7,12 +7,11 @@
   	  <div>
   	    <a href="#"><img src="${path}/images/twitter.png" ></a>
 	    <a href="#"><img src="${path}/images/googleplus.png" ></a>
-	    <a href="#"><img src="${path}/images/douban.png" ></a>
-	    <a href="#"><img src="${path}/images/wechat.png" ></a>
+	   
   	  </div>
 	  <p>
 	    p1<br>
-	  	p2
+	  	copyrights reserved
 	  </p>
     </div>
     <div class="arrow-up">

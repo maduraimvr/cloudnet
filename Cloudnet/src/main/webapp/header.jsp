@@ -18,6 +18,7 @@
 	    <!-- <li><a href="#about">市集</a></li> -->
 	    <li><a target="_blank" href="<c:url value="https://www.google.com"/>">link</a></li>
 	    
+	    
 	    <c:if test="${USER_CONTEXT.userType == 2}">
 	    <li class="dropdown">
           <a href="#>" class="dropdown-toggle" data-toggle="dropdown">dropdown <b class="caret"></b></a>
@@ -34,6 +35,7 @@
 	    </c:if>
 	    
 	  </ul>
+	  
 	  <ul class="nav navbar-nav navbar-right">
         <c:if test="${!empty USER_CONTEXT.userName}">
 		  <li><a href="#">${USER_CONTEXT.userName} <span class="badge">${USER_CONTEXT.credit}</span></a></li>

@@ -107,3 +107,18 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+# Dump of table t_item
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `t_item`;
+
+CREATE TABLE `t_item` (
+  `item_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id',
+  `item_name` varchar(30) NOT NULL COMMENT 'itemname',
+  `item_price` int(11) NOT NULL DEFAULT 0 COMMENT 'price',
+  
+  PRIMARY KEY (`item_id`),
+  KEY `AK_AK_ITEM_ID` (`item_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

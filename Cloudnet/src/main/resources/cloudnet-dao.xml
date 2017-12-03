@@ -44,6 +44,7 @@
 				<prop key="com.portal.cloudnet.domain.Board">nonstrict-read-write,fixedRegion</prop>
 				<prop key="com.portal.cloudnet.domain.User">nonstrict-read-write,freqChangeRegion</prop>
 				<prop key="com.portal.cloudnet.domain.Post">read-write,freqChangeRegion</prop>
+				<prop key="com.portal.cloudnet.domain.Item">nonstrict-read-write,fixedRegion</prop>
 			</props>
 		</property>
 	</bean>
