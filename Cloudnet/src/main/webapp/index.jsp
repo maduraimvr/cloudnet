@@ -55,8 +55,16 @@
 <div class="container">
 <h3>click me</h3>
 <li><a href="<c:url value="/addItem.jsp"/>">add Item</a></li>
-<a class="btn btn-primary" href="<c:url value="/addItem.jsp"/>" role="button">Link</a>
-<button type="button" class="btn btn-success" href="<c:url value="/addItem.jsp"/>">Add</button>
+<a class="btn btn-primary" href="<c:url value="/addItem.jsp"/>" role="button">Add Item</a>
+<a class="btn btn-success" href="<c:url value="/showItem.jsp"/>" role="button">Show Item</a>
+<br>
+  <label for="n1">first number:</label>
+  <input type="text" class="form-control" id="n1">
+  <label for="n2">second number:</label>
+  <input type="text" class="form-control" id="n2">
+  <br>
+<button type="button" id="myBtn" class="btn btn-success">Add</button>
+<script type="text/javascript"  src="${path}/js/cloudnet/cloudnet.js"></script>
 <%-- <button type="submit" class="btn btn-primary" href="<c:url value="/addItem.jsp"/>">Click</button> --%>
 </div>
 

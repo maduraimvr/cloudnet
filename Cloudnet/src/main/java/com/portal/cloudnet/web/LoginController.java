@@ -10,7 +10,10 @@ import javax.servlet.http.HttpSession;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.portal.cloudnet.constant.CommonConstant;
@@ -63,6 +66,16 @@ public class LoginController extends BaseController {
 	public String logout(HttpSession session) {
 		session.removeAttribute(CommonConstant.USER_CONTEXT);
 		return "forward:/index.jsp";
+	}
+	
+	@RequestMapping(value = "/addNumber", method = RequestMethod.POST)
+	@ResponseBody
+	public String controllerMethod(@RequestBody Integer value1, @RequestBody Integer value2){
+		System.out.println("values :"+value1+" , "+value2);
+		int result=value1+value2;
+		System.out.println(result);
+		String res=Integer.toString(result);
+		return res;
 	}
 
 }

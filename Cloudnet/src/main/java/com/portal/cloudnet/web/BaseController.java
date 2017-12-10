@@ -2,7 +2,15 @@ package com.portal.cloudnet.web;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.remoting.soap.SoapFaultException;
 import org.springframework.util.Assert;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import com.portal.cloudnet.constant.CommonConstant;
 import com.portal.cloudnet.domain.User;
 
@@ -44,4 +52,6 @@ public class BaseController {
 		Assert.isTrue(url.startsWith("/"), "å¿…é¡»ä»¥/æ‰“å¤´");
 		return request.getContextPath() + url;
 	}
+	
+	
 }
